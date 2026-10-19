@@ -315,6 +315,9 @@ const FIREBASE_CONFIG = {
   messagingSenderId: "355226438531",
   appId: "1:355226438531:web:1e0300dd841ad9c9e8c4b6"
 };
+// 公開先（○○.pages.dev）ではログイン画面を自分のドメイン経由にする
+// → iPhoneのホーム画面アプリでも「missing initial state」にならない（functions/__/[[path]].js が中継）
+if (/\.pages\.dev$/.test(location.hostname)) FIREBASE_CONFIG.authDomain = location.hostname;
 const DEMO = !FIREBASE_CONFIG.apiKey || FIREBASE_CONFIG.apiKey.startsWith("YOUR");
 
 /* ---------- helpers ---------- */
@@ -760,10 +763,20 @@ if(DEMO){
   const joinParam = new URLSearchParams(location.search).get("join");
   if(joinParam) $("#joinCode").value = joinParam.toUpperCase();
 
+  // ログイン後に戻ってきたときの結果を受け取る
+  auth.getRedirectResult().catch(e => { console.error(e); toast("ログインできませんでした（" + (e.code || "") + "）"); });
   $("#btnLogin").onclick = async () => {
     const pv = new firebase.auth.GoogleAuthProvider();
-    try { await auth.signInWithPopup(pv); }
-    catch(e){ if(e.code === "auth/popup-blocked" || e.code === "auth/operation-not-supported-in-this-environment") auth.signInWithRedirect(pv); else toast("ログインできませんでした"); }
+    pv.setCustomParameters({ prompt: "select_account" });
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || navigator.standalone || matchMedia("(display-mode: standalone)").matches;
+    try {
+      // スマホ・ホーム画面アプリはページ移動方式、PCはポップアップ方式
+      if (isMobile) await auth.signInWithRedirect(pv);
+      else await auth.signInWithPopup(pv);
+    } catch(e){
+      if(e.code === "auth/popup-blocked") auth.signInWithRedirect(pv);
+      else { console.error(e); toast("ログインできませんでした（" + (e.code || "") + "）"); }
+    }
   };
   const logout = () => { if(confirm("ログアウトしますか？")) auth.signOut().then(() => location.reload()); };
   $("#btnLogout").onclick = logout; $("#btnLogout0").onclick = () => auth.signOut();
