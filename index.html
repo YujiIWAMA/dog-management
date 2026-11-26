@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>わんこ手帳</title>
+<title>プーヘルス</title>
 <meta name="theme-color" content="#3A2E28">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="わんこ手帳">
+<meta name="apple-mobile-web-app-title" content="プーヘルス">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" href="icons/icon-192.png">
@@ -177,8 +177,8 @@ label.f{display:block;font-size:13px;color:var(--sub);font-weight:500;margin:10p
 
 <!-- ログイン / 家族設定 -->
 <div id="login" class="login hidden">
-  <div class="logo">🐾</div>
-  <h1>わんこ手帳</h1>
+  <img src="icons/icon-192.png" alt="" style="width:96px;height:96px;border-radius:22px">
+  <h1>プーヘルス</h1>
   <p class="note">体重・ごはん・予定を夫婦で共有</p>
   <button class="primary" id="btnLogin">Googleでログイン</button>
 </div>
@@ -803,8 +803,8 @@ if(DEMO){
   };
   $("#btnShare").onclick = async () => {
     const url = `${location.origin}${location.pathname}?join=${S.familyId}`;
-    const text = `わんこ手帳の招待コード：${S.familyId}\n${url}`;
-    if(navigator.share){ try { await navigator.share({ title: "わんこ手帳", text, url }); } catch(_){} }
+    const text = `プーヘルスの招待コード：${S.familyId}\n${url}`;
+    if(navigator.share){ try { await navigator.share({ title: "プーヘルス", text, url }); } catch(_){} }
     else { await navigator.clipboard.writeText(text); toast("コピーしました"); }
   };
 

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7E9D7"/><stop offset="1" stop-color="#EFD6BC"/>
+    </linearGradient>
+    <radialGradient id="fur" cx=".45" cy=".3" r=".8">
+      <stop offset="0" stop-color="#40352F"/><stop offset="1" stop-color="#17120F"/>
+    </radialGradient>
+    <linearGradient id="ear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E2622"/><stop offset="1" stop-color="#1A1411"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <circle cx="256" cy="236" r="200" fill="#FBF3E9" opacity=".75"/>
+
+  <!-- scale -->
+  <ellipse cx="256" cy="430" rx="160" ry="13" fill="#C9A98A" opacity=".45"/>
+  <rect x="100" y="368" width="312" height="62" rx="28" fill="#FFFFFF"/>
+  <rect x="100" y="368" width="312" height="15" rx="7.5" fill="#E7ECF0"/>
+  <rect x="226" y="404" width="60" height="7" rx="3.5" fill="#E7ECF0"/>
+
+  <!-- body + legs -->
+  <ellipse cx="256" cy="322" rx="82" ry="62" fill="url(#fur)"/>
+  <ellipse cx="256" cy="334" rx="30" ry="24" fill="#C98A4B"/>
+  <rect x="210" y="318" width="34" height="56" rx="16" fill="#1E1815"/>
+  <rect x="268" y="318" width="34" height="56" rx="16" fill="#1E1815"/>
+  <ellipse cx="227" cy="370" rx="22" ry="12" fill="#C98A4B"/>
+  <ellipse cx="285" cy="370" rx="22" ry="12" fill="#C98A4B"/>
+  <path d="M218 373 v-6 M227 374 v-7 M236 373 v-6 M276 373 v-6 M285 374 v-7 M294 373 v-6" stroke="#A86F36" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- collar -->
+  <path d="M206 282 C236 298 276 298 306 282 L304 302 C276 314 236 314 208 302 Z" fill="#D2453F"/>
+  <circle cx="256" cy="314" r="9" fill="#F2C14E"/>
+
+  <!-- head -->
+  <ellipse cx="256" cy="206" rx="90" ry="84" fill="url(#fur)"/>
+  <!-- tan muzzle -->
+  <ellipse cx="256" cy="250" rx="52" ry="38" fill="#C98A4B"/>
+  <path d="M244 150 C250 146 262 146 268 150 L276 230 L236 230 Z" fill="#231C19"/>
+  <!-- nose -->
+  <ellipse cx="256" cy="232" rx="21" ry="15" fill="#0D0A09"/>
+  <ellipse cx="249" cy="227" rx="6" ry="3.5" fill="#6E625C"/>
+  <!-- smiling open mouth + tongue -->
+  <path d="M228 254 C238 262 250 262 256 252 C262 262 274 262 284 254 C282 280 268 292 256 292 C244 292 230 280 228 254 Z" fill="#6A2526"/>
+  <path d="M240 270 C246 264 266 264 272 270 C274 288 266 300 256 300 C246 300 238 288 240 270 Z" fill="#F28C9A"/>
+  <path d="M256 272 v18" stroke="#D96B7B" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M228 254 C238 262 250 262 256 252 C262 262 274 262 284 254" stroke="#1A1411" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- eyes -->
+  <ellipse cx="216" cy="196" rx="14" ry="15" fill="#0D0A09"/>
+  <ellipse cx="296" cy="196" rx="14" ry="15" fill="#0D0A09"/>
+  <circle cx="221" cy="190" r="5.5" fill="#FFFFFF"/>
+  <circle cx="301" cy="190" r="5.5" fill="#FFFFFF"/>
+  <circle cx="212" cy="202" r="2.2" fill="#FFFFFF"/>
+  <circle cx="292" cy="202" r="2.2" fill="#FFFFFF"/>
+  <!-- tan eyebrows -->
+  <ellipse cx="214" cy="168" rx="11" ry="7" fill="#C98A4B"/>
+  <ellipse cx="298" cy="168" rx="11" ry="7" fill="#C98A4B"/>
+  <!-- cheeks -->
+  <ellipse cx="214" cy="240" rx="11" ry="7" fill="#F08A86" opacity=".5"/>
+  <ellipse cx="298" cy="240" rx="11" ry="7" fill="#F08A86" opacity=".5"/>
+
+  <!-- long feathered ears -->
+  <path d="M190 148 C160 150 144 182 146 222 C148 262 152 292 166 316 C172 326 182 320 182 310 C188 320 200 316 198 304 C208 306 210 292 204 284 C208 262 204 234 196 214 C192 196 196 168 190 148 Z" fill="url(#ear)"/>
+  <path d="M322 148 C352 150 368 182 366 222 C364 262 360 292 346 316 C340 326 330 320 330 310 C324 320 312 316 314 304 C304 306 302 292 308 284 C304 262 308 234 316 214 C320 196 316 168 322 148 Z" fill="url(#ear)"/>
+  <path d="M164 220 C162 252 166 278 174 298 M182 226 C182 256 186 276 192 292 M348 220 C350 252 346 278 338 298 M330 226 C330 256 326 276 320 292" stroke="#41362F" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>

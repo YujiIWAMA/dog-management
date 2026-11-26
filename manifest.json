@@ -1,10 +1,10 @@
 {
-  "name": "わんこ手帳",
-  "short_name": "わんこ手帳",
+  "name": "プーヘルス",
+  "short_name": "プーヘルス",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#FBF7F1",
+  "background_color": "#F7E9D7",
   "theme_color": "#3A2E28",
   "icons": [
     {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
